@@ -1,6 +1,6 @@
 # OpenMayhem MCP
 
-OpenMayhem's local stdio bridge forwards MCP messages to the hosted OpenMayhem service. It contains no model catalog, pricing table, account balance, payment implementation, provider data, or credentials.
+OpenMayhem's local stdio bridge forwards MCP messages to the hosted OpenMayhem service. It does not bundle a stale catalog: `list_models` and `get_model` read the live catalog, availability, capabilities, limits, routes, and prices from OpenMayhem. Account balance and payment logic remain on the hosted service, and the bridge contains no provider data or credentials.
 
 ## Install
 
