@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.openmayhem/openmayhem",
+  "title": "OpenMayhem",
+  "description": "Use OpenMayhem text, embedding and media models with explicit cost controls.",
+  "version": "1.0.0",
+  "websiteUrl": "https://openmayhem.ai/docs/mcp",
+  "repository": {
+    "url": "https://github.com/Trac-Systems/openmayhem-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.openmayhem.ai/mcp",
+      "headers": [
+        {
+          "name": "X-OpenMayhem-API-Key",
+          "description": "A restricted OpenMayhem API key from your dashboard.",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/Trac-Systems/openmayhem-mcp/releases/download/v1.0.0/openmayhem-mcp-v1.0.0.mcpb",
+      "fileSha256": "4bd0be36afdd47a2da92381369e3f001c1adf6d986ed74df7d191b1c361d0892",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

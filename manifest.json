@@ -1,0 +1,63 @@
+{
+  "manifest_version": "0.3",
+  "name": "openmayhem",
+  "display_name": "OpenMayhem",
+  "version": "1.0.0",
+  "description": "Connect local MCP clients to OpenMayhem models with explicit cost controls.",
+  "long_description": "Use OpenMayhem text, embedding, image, video, audio, music, and workflow models from a local MCP client. Free discovery and estimation tools do not spend model credit. Paid tools require a current estimate and a hard maximum cost.",
+  "author": {
+    "name": "OpenMayhem",
+    "url": "https://openmayhem.ai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Trac-Systems/openmayhem-mcp.git"
+  },
+  "homepage": "https://openmayhem.ai",
+  "documentation": "https://openmayhem.ai/docs/mcp",
+  "support": "https://github.com/Trac-Systems/openmayhem-mcp/issues",
+  "license": "MIT",
+  "privacy_policies": [
+    "https://openmayhem.ai/privacy"
+  ],
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=22"
+    }
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "server/cli.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/cli.js"
+      ],
+      "env": {
+        "OPENMAYHEM_API_KEY": "${user_config.api_key}"
+      }
+    }
+  },
+  "user_config": {
+    "api_key": {
+      "type": "string",
+      "title": "OpenMayhem API key",
+      "description": "A restricted API key created in the OpenMayhem dashboard.",
+      "sensitive": true,
+      "required": true
+    }
+  },
+  "tools_generated": true,
+  "keywords": [
+    "ai",
+    "models",
+    "inference",
+    "embeddings",
+    "media"
+  ]
+}

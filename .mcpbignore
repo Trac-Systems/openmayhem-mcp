@@ -1,0 +1,5 @@
+*.mcpb
+server.json
+SHA256SUMS
+.mcpbignore
+.git/
